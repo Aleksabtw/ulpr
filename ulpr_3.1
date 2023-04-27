@@ -1,0 +1,178 @@
+using System;
+namespace shablon
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, c, d, k, n;
+            Console.WriteLine("Введите число");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите месяц");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите год");
+            c = Convert.ToInt32(Console.ReadLine());
+            if (((c % 4 == 0) && (c % 100 != 0)) || ((c % 100 == 0) && (c % 400 == 0)))
+            {
+                k = 1;
+                Console.WriteLine("Год високосный");
+            }
+            else
+            {
+                k = 0;
+                Console.WriteLine("Год невисокосный");
+            }
+            while ((a <= 0) || (b <= 0) || (c <= 0) || (b >= 13) || (a >= 32) || ((b == 4) && (a >= 31)) || ((b == 6) && (a >= 31)) || ((b == 9) && (a >= 31)) || ((b == 11) && (a >= 31)) || ((k == 1) && (b == 2) && (a >= 30)) || ((k == 0) && (b == 2) && (a >= 29)))
+            {
+                Console.WriteLine("Заново введите число");
+                a = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Заново введите месяц");
+                b = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Заново введите год");
+                c = Convert.ToInt32(Console.ReadLine());
+                if (((c % 4 == 0) && (c % 100 != 0)) || ((c % 100 == 0) && (c % 400 == 0)))
+                {
+                    k = 1;
+                    Console.WriteLine("Год високосный");
+                }
+                else
+                {
+                    k = 0;
+                    Console.WriteLine("Год невисокосный");
+                }
+            }
+            if (b == 1)
+            {
+                n = a;
+            }
+            else if (b == 2)
+            {
+                n = 31 + a;
+            }
+            else if (b == 3)
+            {
+                if (k == 1)
+                {
+                    n = 60 + a;
+                }
+                else
+                {
+                    n = 59 + a;
+                }
+            }
+            else if (b == 4)
+            {
+                if (k == 1)
+                {
+                    n = 91 + a;
+                }
+                else
+                {
+                    n = 90 + a;
+                }
+            }
+            else if (b == 5)
+            {
+                if (k == 1)
+                {
+                    n = 121 + a;
+                }
+                else
+                {
+                    n = 120 + a;
+                }
+            }
+            else if (b == 6)
+            {
+                if (k == 1)
+                {
+                    n = 151 + a;
+                }
+                else
+                {
+                    n = 150 + a;
+                }
+            }
+            else if (b == 7)
+            {
+                if (k == 1)
+                {
+                    n = 182 + a;
+                }
+                else
+                {
+                    n = 181 + a;
+                }
+            }
+            else if (b == 8)
+            {
+                if (k == 1)
+                {
+                    n = 213 + a;
+                }
+                else
+                {
+                    n = 212 + a;
+                }
+            }
+            else if (b == 9)
+            {
+                if (k == 1)
+                {
+                    n = 244 + a;
+                }
+                else
+                {
+                    n = 243 + a;
+                }
+            }
+            else if (b == 10)
+            {
+                if (k == 1)
+                {
+                    n = 274 + a;
+                }
+                else
+                {
+                    n = 273 + a;
+                }
+            }
+            else if (b == 11)
+            {
+                if (k == 1)
+                {
+                    n = 305 + a;
+                }
+                else
+                {
+                    n = 304 + a;
+                }
+            }
+            else if (b == 12)
+            {
+                if (k == 1)
+                {
+                    n = 335 + a;
+                }
+                else
+                {
+                    n = 334 + a;
+                }
+            }
+            else
+            {
+                n = 0;
+            }
+            Console.WriteLine($"Номер дня - {n}");
+            if (k == 1)
+            {
+                d = (366 - n) - 1;
+            }
+            else
+            {
+                d = (365 - n) - 1;
+            }
+            Console.WriteLine($"Дней до конца года - {d}");
+        }
+    }
+}
