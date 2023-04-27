@@ -1,0 +1,30 @@
+using System;
+namespace shablon
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите ребра кирпича");
+            Console.WriteLine("a=");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("b=");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("c=");
+            int c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите стороны отверстия");
+            Console.WriteLine("x=");
+            int x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("y=");
+            int y = Convert.ToInt32(Console.ReadLine());
+            if ( ((a<=x) && (b<=y)) || ((b<=x) && (a<=y)) || ((a<=x) && (c<=y)) || ((c<=x) && (a<=y)) || ((b<=x) && (c<=y)) || ((c<=x) && (b<=y)) )
+            {
+                Console.WriteLine("Кирпич пройдет в отверстие");
+            }
+            else
+            {
+                Console.WriteLine("Кирпич не пройдет в отверстие");
+            }
+        }
+    }
+}
