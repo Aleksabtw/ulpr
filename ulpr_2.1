@@ -1,0 +1,20 @@
+using System;
+namespace shablon
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите цену тетради");
+            int Ct = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите количество тетрадей");
+            int Kt = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите цену карандаша");
+            int Ck = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите количество карандашей");
+            int Kk = Convert.ToInt32(Console.ReadLine());
+            int S = (Ct * Kt) + (Ck * Kk);
+            Console.WriteLine($"Стоимость покупки = {S}");
+        }
+    }
+}
