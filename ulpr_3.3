@@ -1,0 +1,42 @@
+using System;
+namespace shablon
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите конечное число диапазона от 1 до n");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите количество попыток");
+            int k = Convert.ToInt32(Console.ReadLine());
+            Random rnd = new Random();
+            int value = rnd.Next(1, n);
+            Console.WriteLine("Угадайте число");
+            bool flag = false;
+            for (int i = 1; i <= k; i++)
+            {
+                int otvet = Convert.ToInt32(Console.ReadLine());
+                if (otvet == value)
+                {
+                    Console.WriteLine("Вы угадали");
+                    flag = true;
+                    break;
+                }
+                if (value > otvet)
+                {
+                    Console.WriteLine($"Загаданное число больше {otvet}");
+                }
+                if (value < otvet)
+                {
+                    Console.WriteLine($"Загаданное число меньше {otvet}");
+                }
+                int popitka = k - i;
+                Console.WriteLine($"Осталось {popitka} попыток");
+            }
+            if (!flag)
+            {
+                Console.WriteLine("Попытки закончились");
+            }
+        }
+    }
+}
